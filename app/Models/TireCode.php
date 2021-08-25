@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\TireType;
 
+
 class TireCode extends Model
 {
-    use HasFactory;
+    // use HasFactory;
 
     protected $guarded = [
         'id'
@@ -16,7 +17,7 @@ class TireCode extends Model
 
     public function type()
     {
-        return $this->belongsTo(TireType::class);
+        return $this->belongsTo(TireType::class, 'tire_type_id');
        
     }
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\TireCode;
+
 
 class TireType extends Model
 {
@@ -14,7 +14,7 @@ class TireType extends Model
         'id'
     ];
 
-    public function tire()
+    public function tires()
     {
         return $this->hasMany(TireCode::class);
     }

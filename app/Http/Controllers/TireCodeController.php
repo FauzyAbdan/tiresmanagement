@@ -20,7 +20,7 @@ class TireCodeController extends Controller
   
     public function create()
     {
-        $tire_types = TireType::latest()->get();
+        $tire_types = TireType::get();
 
         return view('tires.create', compact('tire_types'));
 
@@ -31,13 +31,15 @@ class TireCodeController extends Controller
         
         $validatedData = $request->validate([
 
-        //I think I can't put unique parameter here for tire_codes name column
+        //I want this name to be unique only if the user choose the same tire_type
         'name'      => 'required|unique:tire_codes|min:2',
-        'tire_type_id' => 'nullable',
+        'tire_type_id'      =>  'required',
+        
 
 
         
         ]);
+        
         
         TireCode::create($validatedData);
 

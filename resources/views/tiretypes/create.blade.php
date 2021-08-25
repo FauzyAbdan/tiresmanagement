@@ -18,7 +18,7 @@
         </div> --}}
 
         <div class="form-group row justify-content-center">
-          <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+          <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" autofocus
           placeholder="Add new tire type" required value="{{ old('name') }}">
           @error('name')
           <div class="invalid-feedback">{{ $message }}</div>

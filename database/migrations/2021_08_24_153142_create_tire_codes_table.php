@@ -18,7 +18,7 @@ class CreateTireCodesTable extends Migration
             //I think I can't put unique parameter here for tire_codes name column
             $table->string('name');
             //the uniqueness of tire_codes name values based on tire_type_id
-            $table->foreignId('tire_type_id');
+            $table->foreignId('tire_type_id')->references('id')->on('tire_types');
             $table->timestamps();
         });
     }

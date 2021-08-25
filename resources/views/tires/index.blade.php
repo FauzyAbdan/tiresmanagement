@@ -36,7 +36,7 @@
               <td scope="row">{{$tire_codes->firstItem() + $loop->index }}</td>
               
               <td>{{ $item->name }}</td>
-              <td>{{ $item->tire_type_id}}->disini harusnya berisi nama kategori</td>
+              <td>{{ $item->type->name}}</td>
               <td>{{ $item->created_at->format('d-m-Y')}}</td>
 
                           

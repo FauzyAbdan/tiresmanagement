@@ -10,15 +10,9 @@
 
         @csrf
 
-        {{-- <div class="form-group row justify-content-center">
-            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Add new tire type">
-            @if ($errors->has('name'))
-                <span class="text-danger">{{ $errors->first('name') }}</span>
-            @endif
-        </div> --}}
 
         <div class="form-group row justify-content-center">
-          <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+          <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" autofocus
           placeholder="Add new tire code    " required value="{{ old('name') }}">
           @error('name')
           <div class="invalid-feedback">{{ $message }}</div>
